@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue 4- List show by condition</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div class="root">
+        <h3>All Lists</h3>
+            <ul>
+                <li v-for="task in tasks" v-text="task.description"></li>
+            </ul>
+            <h3>Completed Lists</h3>
+            <ul>
+                <li v-for="task in tasks" v-if='task.completed' v-text="task.description"></li>
+            </ul>
+            <h3>Incompleted Lists</h3>
+            <ul>
+                <li v-for="task in tasks" v-if='!task.completed' v-text="task.description"></li>
+            </ul>
+    </div>
+    <script>
+        new Vue({
+            el:".root",
+            data:{
+                tasks:[
+                    {description:'Fish', completed:true},
+                    {description:'Vegetable', completed:false},
+                    {description:'Rice', completed:true},
+                    {description:'Fruits', completed:false},
+                    {description:'Biscuites', completed:true},
+                    {description:'Banana', completed:false},
+                ]
+            },
+        });
+    </script>
+    
+</body>
+</html>

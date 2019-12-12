@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue 3- Focus Input</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div class="root">
+            <input id="typeBox" ref="typeBox" v-bind:placeholder='placeholder' />
+            <button id="button" @click="focusMe">Add Name</button>
+    </div>
+    <script>
+        new Vue({
+            el:".root",
+            data:{
+                placeholder:'Focus me',
+            },
+            methods:{
+                focusMe(){
+                    this.$refs.typeBox.focus();
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>
